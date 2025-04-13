@@ -1,0 +1,162 @@
+.candidate-search {
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Remove conflicting styles for the card and its parts */
+.candidate-card {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 40px;
+  max-width: 320px; /* Reduced from 350px */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Update minimum heights - reduced by 30px */
+#candidate-image-top {
+  width: 100% !important;
+  position: relative !important;
+  min-height: 290px !important; /* Reduced from 320px */
+  border-top-left-radius: 40px !important;
+  border-top-right-radius: 40px !important;
+}
+
+#candidate-info-bottom {
+  width: 100% !important;
+  overflow-y: visible !important;
+  min-height: 290px !important; /* Reduced from 320px */
+  border-bottom-left-radius: 40px !important;
+  border-bottom-right-radius: 40px !important;
+}
+
+.candidate-image {
+  width: 100%;
+  height: 180px; /* Equal height with info section */
+  overflow: hidden;
+  position: relative;
+}
+
+.candidate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.candidate-info {
+  width: 100%;
+  height: 180px; /* Equal height with image section */
+  background-color: black;
+  color: white;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Allow scrolling for content that doesn't fit */
+}
+
+.candidate-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.info-field {
+  margin: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-field.bio {
+  white-space: normal;
+  max-height: 60px;
+  overflow: auto;
+}
+
+.candidate-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Increased from 20px */
+}
+
+.skip-button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #ffffff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  text-align: center;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.no-candidates {
+  text-align: center;
+  padding: 30px;
+}
+
+.no-suitable-candidates {
+  text-align: center;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.refresh-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+  background-color: #45a049;
+}
