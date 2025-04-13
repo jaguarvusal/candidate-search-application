@@ -1,33 +1,29 @@
 import { Candidate } from '../interfaces/Candidate.interface';
-// Import token directly
-import { GITHUB_TOKEN as CONFIG_TOKEN } from '../config';
 
-// Combine all token sources with more detailed logging
+// Use only the environment variable for the token
 let GITHUB_TOKEN = '';
 
 // Log current environment for debugging
 console.log('Current environment vars available:', 
   Object.keys(import.meta.env).filter(key => key.startsWith('VITE_')));
 
-// Try environment variable first
+// Debug log to check if the token is loaded
+console.log('Loaded GitHub token:', import.meta.env.VITE_GITHUB_TOKEN);
+
+// Try environment variable
 if (import.meta.env.VITE_GITHUB_TOKEN) {
   console.log('Using token from environment variable');
   GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
-}
-// Fall back to config file
-else if (CONFIG_TOKEN) {
-  console.log('Using token from config.ts file');
-  GITHUB_TOKEN = CONFIG_TOKEN;
-}
-else {
-  console.error('No GitHub token found in environment or config file!');
+} else {
+  console.error('No GitHub token found in environment variables!');
+  throw new Error('GitHub access token is missing. Add it to the .env file as VITE_GITHUB_TOKEN.');
 }
 
 // Create a reusable fetch function with proper error handling and typing
 const fetchWithAuth = async <T,>(url: string): Promise<T> => {
   // Get token when needed
   if (!GITHUB_TOKEN) {
-    console.error('GitHub token is missing! Add to .env file as VITE_GITHUB_TOKEN or to config.ts file as GITHUB_TOKEN');
+    console.error('GitHub token is missing! Add to .env file as VITE_GITHUB_TOKEN');
     throw new Error('GitHub access token is missing. See console for details.');
   }
 
