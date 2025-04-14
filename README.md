@@ -1,6 +1,6 @@
 # Candidate Search Application
 
-[Live Demo](https://your-deployment-link-here.com)
+[Live Demo](https://candidate-search-application-035x.onrender.com)
 
 This is a dynamic candidate discovery and selection application that allows users to browse through developer profiles, shortlist potential candidates, and manage a persistent list of saved candidates. Built to streamline the search process, the app enables users to swipe through profiles and save ideal matches with a single click.
 <img width="1439" alt="Screen Shot 2025-04-13 at 4 06 48 PM" src="https://github.com/user-attachments/assets/050dbac6-34d1-4a17-8848-df5b671e934e" />
